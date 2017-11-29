@@ -1,0 +1,115 @@
+// JavaScript Document
+//����¼����
+function chk_lg(){
+    if(document.login.username.value == ""){
+        alert("�˺Ų���Ϊ��");
+        document.login.username.focus();
+        return false;
+    }
+    if(document.login.pwd.value == ""){
+        alert("���벻��Ϊ��");
+        document.login.pwd.focus();
+        return false;
+    }
+}
+//��̬�˵�
+function clickHandler() {
+  var targetId, srcElement, targetElement;
+  srcElement = window.event.srcElement;
+  if (srcElement.className == "Outline") {
+     targetId = srcElement.id + "details"; 
+     imgid = srcElement.id + "img";
+     targetElement = document.all(targetId);
+     if (targetElement.style.display == "none") {
+         document[imgid].src = "../images/jian.gif";
+        targetElement.style.display = "";
+     } else {
+         document[imgid].src = "../images/jia.gif";
+        targetElement.style.display = "none";
+     }
+  }
+}
+//����ƶ�
+function add_rule(){
+    if(document.r_add.u_title.value == ""){
+        alert("���ⲻ��Ϊ��");
+        return false;
+    }
+    if(document.r_add.u_content.value == ""){
+        alert("���ݲ���Ϊ��");
+        return false;
+    }
+}
+//����Ա��
+function glist(){
+    var len = document.form1.right.length;
+    var list = "";
+    if((form1.s_fdate.value == "") && (form1.s_ldate.value == "")){
+        alert("���ڲ���Ϊ��");
+        return false;
+    }
+    for(var i = 0; i < len; i++){
+        list += document.form1.right[i].text + ",";
+    }
+    form1.g_list.value = list;
+}
+ function moveSelected(oSourceSel,oTargetSel)
+ {
+     var arrSelValue = new Array();
+     var arrSelText = new Array();
+     var arrValueTextRelation = new Array();
+     var index = 0;
+     for(var i=0; i<oSourceSel.options.length; i++)
+     {
+         if(oSourceSel.options[i].selected)
+         {
+             arrSelValue[index] = oSourceSel.options[i].value;
+             arrSelText[index] = oSourceSel.options[i].text;
+             arrValueTextRelation[arrSelValue[index]] = oSourceSel.options[i];
+             index ++;
+         }
+     }
+     for(var i=0; i<arrSelText.length; i++)  
+     {
+         var oOption = document.createElement("option");
+         oOption.text = arrSelText[i];
+         oOption.value = arrSelValue[i];
+         oTargetSel.add(oOption);
+         oSourceSel.removeChild(arrValueTextRelation[arrSelValue[i]]);
+     }
+ }
+ //��ӹ���
+ function add_mess(){
+    if(document.addmess.p_title.value == ""){
+        alert("���ⲻ��Ϊ��");
+        return false;
+    }
+    if(document.addmess.p_content.value == ""){
+        alert("���ݲ���Ϊ��");
+        return false;
+    }
+}
+function del_mess(){
+    if(confirm('ȷ��Ҫɾ����'))
+        return true;
+    else
+        return false;
+}
+//������
+function add_lyb(){
+    if(document.lyb.l_title.value==""){
+        alert("���ⲻ��Ϊ��");
+        return false;
+    }
+    if(document.lyb.l_content.value==""){
+        alert("���ݲ���Ϊ��");
+        return false;
+    }
+}
+//�ظ����
+function re_back(){
+    if(document.tback.r_back.value==""){
+        alert("���ݲ���Ϊ��");
+        return false;
+    }
+}
